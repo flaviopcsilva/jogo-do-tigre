@@ -1,0 +1,29 @@
+<div class="player-balance">
+    Saldo do Jogador: {{ playerBalance }} pontos
+</div>
+
+<div>
+    <button (click)="addCredits()">Adicionar Créditos</button>
+    <input type="number" [(ngModel)]="creditsToAdd" placeholder="Quantidade de Créditos">
+</div>
+
+
+
+<div class="slot-machine">
+    <div class="reels">
+        <ng-container *ngFor="let symbolGroup of symbolGroups; let i = index">
+            <div class="reel">
+                <div class="symbols">
+                    <div *ngFor="let symbol of symbolGroup" class="slot" [ngClass]="{'spin-animation': spinning}"
+                        [class.spin]="spinning">
+                        <img [src]="symbol.image" alt="{{ symbol.name }}" width="70" height="70" class="symbol-image">
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <button (click)="spin()" [disabled]="playerBalance < roundPoints">Spin</button>
+    <div class="result">
+        <p>{{ resultMessage }}</p>
+    </div>
+</div>

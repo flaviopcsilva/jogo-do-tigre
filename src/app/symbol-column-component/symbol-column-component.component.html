@@ -1,0 +1,7 @@
+<div class="reel">
+    <div class="symbols">
+        <div *ngFor="let symbol of symbols; let i = index" class="slot" [class.spin]="i === currentSymbolIndex">
+            <img [src]="symbol.image" alt="{{ symbol.name }}" width="70" height="70">
+        </div>
+    </div>
+</div>

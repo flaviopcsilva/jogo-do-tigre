@@ -1,0 +1,130 @@
+/* No arquivo slot-machine.component.css ou em seu arquivo de estilo CSS */
+.player-balance {
+    font-size: 18px;
+    /* Tamanho da fonte */
+    font-weight: bold;
+    /* Negrito, se desejar */
+    color: #333;
+    /* Cor do texto */
+    /* Outros estilos de formatação conforme necessário */
+}
+
+
+.slot-machine {
+    text-align: center;
+    padding: 20px;
+}
+
+.symbol-image {
+    margin: 1px;
+    width: 100%;
+    height: 100%;
+    /* Ajuste o valor de margem conforme necessário para controlar o espaçamento */
+}
+
+
+.reel {
+    display: inline-block;
+    width: 100px;
+    /* Largura suficiente para acomodar 3 símbolos lado a lado */
+    height: 300px;
+    border: 1px solid #333;
+    margin: 0 10px;
+    overflow: hidden;
+    /* Oculta qualquer símbolo fora do slot */
+}
+
+.symbols {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.symbol-row {
+    display: flex;
+}
+
+.slot {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.symbol {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: transform 3s ease-in-out;
+}
+
+.spin {
+    animation: spin 3s linear infinite;
+}
+
+
+
+@keyframes spin {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-240px);
+        /* Ajuste conforme necessário para a altura do seu slot */
+    }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.total-winnings {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Exemplo de media query para telas menores */
+@media (max-width: 768px) {
+
+    /* Defina estilos específicos para telas menores aqui */
+    .reel {
+        display: inline-block;
+        width: 80px;
+        /* Largura suficiente para acomodar 3 símbolos lado a lado */
+        height: 200px;
+        border: 1px solid #333;
+        margin: 0 10px;
+        overflow: hidden;
+        /* Oculta qualquer símbolo fora do slot */
+    }
+}
